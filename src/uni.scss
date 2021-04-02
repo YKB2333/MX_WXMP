@@ -1,0 +1,202 @@
+
+$uni-color-theme: #FFD100; // 主题色
+$uni-color-primary:#121314; // 文字
+$uni-color-danger: #FF3838;
+$uni-color-info: #66686c;
+$uni-color-gray: #9DA0A4;
+$uni-color-blue: #45658F;
+$uni-bg-color-primary: #F2F2F5;
+$uni-color-pink:#FF9EA8;
+
+view{
+  font-size: 28rpx;
+  color: $uni-color-primary;
+  box-sizing: border-box;
+}
+image{
+  vertical-align: middle;
+  height: auto;
+}
+$unit: rpx;
+
+.color{
+  &-theme{
+    color: $uni-color-theme !important;
+  }
+  &-primary{
+    color: $uni-color-primary !important;
+  }
+  &-red{
+    color: $uni-color-danger !important;
+  }
+  &-white{
+    color: #ffffff !important;
+  }
+  &-info{
+    color: $uni-color-info !important;
+  }
+  &-gray{
+    color: $uni-color-gray !important;
+  }
+  &-blue{
+    color: $uni-color-blue !important;
+  }
+  &-pink{
+    color:#FE5050 !important;
+  }
+  &-gray-simple{
+    color:#BFC2CC !important; 
+  }
+  &-pink-simple {
+    color:#F77F8C !important;
+  }
+  &-sub-gray {
+    color:#909399 !important;
+  }
+}
+
+// 背景色
+.bg{
+  &-primary{
+    background-color: $uni-bg-color-primary;
+  }
+  &-theme{
+    background-color: $uni-color-theme;
+  }
+  &-white{
+    background-color: #ffffff;
+  }
+  &-black{
+    background-color: #121314;
+  }
+  &-gray{
+    background-color: $uni-color-gray;
+  }
+  &-gray-simple{
+    background-color:#BFC2CC !important;
+  }
+  &-pink{
+    background-color:#FF9EA8 !important;
+  }
+  &-sub-gray {
+    background-color:#909399 !important;
+  }
+  
+}
+
+// 字体大小
+.fs{
+  &-mini{
+    font-size: 20 + $unit;
+  }
+  &-18{
+    font-size: 18 + $unit;
+  }
+  &-22{
+    font-size: 22 + $unit;
+  }
+  &-sm{
+    font-size: 24 + $unit;
+  }
+  &-sm-add{
+    font-size: 26 + $unit;
+  }
+  &-normal{
+    font-size: 28 + $unit;
+  }
+  &-lg{
+    font-size: 32 + $unit;
+  }
+  &-lg-add{
+    font-size: 34 + $unit;
+  }
+  &-lg-num{
+    font-size: 36 + $unit;
+  }
+  &-lg-big{
+    font-size: 40 + $unit;
+  }
+  &-lg-big-add{
+    font-size: 42 + $unit;
+  }
+  &-lg-big-add-add{
+    font-size: 56 + $unit;
+  }
+}
+// 边框
+.hairline{
+  &-bottom{
+    border-bottom: 1px solid #EEF2F6;
+  }
+  &-top{
+    border-top: 1px solid #EEF2F6;
+  }
+}
+// 圆角
+.radius{
+  border-radius: 8rpx;
+  &-twenty{
+    border-radius: 20rpx;
+  }
+  &-circle{
+    border-radius: 50%;
+  }
+  &-round{ // 椭圆
+    border-radius: 100rpx;
+  }
+  &-sm{
+    border-radius: 8px;
+  }
+  &-mini{
+    border-radius: 6rpx;
+  }
+  &-12{
+    border-radius: 12rpx;
+  }
+}
+
+// 进步器样式重写
+.van-stepper{
+  display: flex;
+  .stepper-icon{
+    width:40rpx !important;
+    height:40rpx !important;
+    background:rgba(255,255,255,1) !important;
+    border: 1px solid rgba(18, 19, 20, 1) !important;
+    border-radius: 8rpx !important;
+    line-height: 40rpx!important;
+  }
+  .stepper-input{
+    height: 40rpx !important;
+    width: 90rpx !important;
+    font-size: 24rpx !important;
+    background-color:rgba(255,255,255,1) !important;
+    border: 1px solid rgba(18, 19, 20, 1) !important;
+    border-radius: 8rpx !important;
+    margin-left: 8rpx !important;
+    margin-right: 8rpx !important;
+    // display: flex !important;
+    // align-items: center !important;
+    vertical-align: bottom; // 解决真机上没有垂直居中问题，但开发工具没居中，艹
+  }
+  .van-stepper__input--disabled{
+    color: $uni-color-primary;
+  }
+  .van-stepper__minus--disabled,
+  .van-stepper__plus--disabled{
+    border: 1px solid $uni-color-gray !important;
+  }
+}
+button{
+  border-radius: 0;
+  font-size: 28rpx;
+  color: $uni-color-primary;
+  &::after{
+    border: none;
+  }
+}
+input,textarea{
+  color: $uni-color-primary;
+  font-size: 28rpx;
+}
+

@@ -1,0 +1,212 @@
+@mixin multi-ellipsis($lines) {
+  overflow: hidden  !important;
+  word-break: break-word !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: $lines !important;
+  text-overflow: ellipsis !important;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical !important;
+  /* autoprefixer: on */
+}
+
+@mixin ellipsis() {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+.h-full {
+  height: 100% !important;
+}
+.w-h-full {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.relative {
+  position: relative  !important;
+}
+.absolute {
+  position: absolute  !important;
+}
+.fixed {
+  position: fixed  !important;
+}
+
+.y-scroll {
+  overflow-y: scroll  !important;
+  overflow-x: hidden  !important;
+}
+.x-scroll {
+  overflow-x: scroll  !important;
+  overflow-y: hidden  !important;
+}
+.scroll {
+  overflow: scroll  !important;
+}
+.overflow-auto {
+  overflow: auto  !important;
+}
+.hidden {
+  overflow: hidden  !important;
+}
+.border-box {
+  box-sizing: border-box  !important;
+}
+.ellipsis {
+  @include ellipsis();
+}
+.ellipsis2 {
+  @include multi-ellipsis(2);
+}
+.ellipsis3 {
+  @include multi-ellipsis(3);
+}
+.pointer {
+  cursor: pointer  !important;
+}
+
+.pos-center {
+  position: absolute  !important;
+  top: 50%  !important;
+  left: 50%  !important;
+  transform: translate(-50%, -50%)  !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.block{
+  display: block;
+}
+.inline-block{
+  display: inline-block;
+}
+.row {
+  display: flex;
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+}
+.col {
+  display: flex  !important;
+  flex-direction: column  !important;
+  &-reverse {
+    flex-direction: column-reverse  !important;
+  }
+}
+// flex：份数
+@for $n from 1 through 24 {
+  .flex-#{$n} {
+    flex: $n;
+  }
+}
+.flex-none {
+  flex: none  !important;
+}
+.center-x {
+  justify-content: center  !important;
+  text-align: center  !important;
+}
+.center-y {
+  align-items: center  !important;
+}
+.center {
+  justify-content: center  !important;
+  align-items: center  !important;
+}
+$flex-wrap: nowrap, wrap, wrap-reverse;
+@each $val in $flex-wrap {
+  .#{$val} {
+    flex-wrap: $val;
+  }
+}
+$justify-content: flex-start, flex-end, space-between, space-around;
+@each $val in $justify-content {
+  .#{$val} {
+    justify-content: $val;
+  }
+}
+$align-items: flex-start, flex-end, baseline, stretch;
+@each $val in $align-items {
+  .#{$val} {
+    align-items: $val ;
+  }
+}
+.text-left {
+  text-align: left !important;
+}
+
+
+$BasePx: rpx;
+
+
+@for $size from 2 through 500{
+  @if $size%2 == 0 {
+    .w#{$size} { width: $size + $BasePx !important; }
+    .h#{$size} { height: $size + $BasePx !important; }
+    .w-h#{$size} { width: $size + $BasePx; height: $size + $BasePx !important; }
+    .l-h#{$size} { line-height: $size + $BasePx !important; }
+    .wpct#{$size} { width: percentage($size/100)  !important; }
+  }
+}
+
+
+// 字体大小
+@for $size from 10 through 40{
+  .fs#{$size} { font-size: $size + px !important; }
+}
+@for $size from 0 through 20{
+  .z-index#{$size} { z-index: $size !important; }
+}
+
+// 字体粗细
+$fontWeights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+@each $weight in $fontWeights {
+  .fw#{$weight} { font-weight: $weight !important;}
+}
+
+
+// 宽高
+@for $size from 2 through 500{
+  @if $size%2 == 0 {
+    .w#{$size} { width: $size + $BasePx !important; }
+    .h#{$size} { height: $size + $BasePx !important; }
+    .w-h#{$size} { width: $size + $BasePx; height: $size + $BasePx !important; }
+    .l-h#{$size} { line-height: $size + $BasePx !important; }
+  }
+}
+
+// 遍历生成padding和margin(2-100之间的偶数)
+@for $size from 0 through 1000{
+  @if $size%2 == 0 {
+    .p#{$size} { padding: $size + $BasePx !important; }
+    .pt#{$size} { padding-top: $size + $BasePx !important; }
+    .pb#{$size} { padding-bottom: $size + $BasePx !important; }
+    .pl#{$size} { padding-left: $size + $BasePx !important; }
+    .pr#{$size} { padding-right: $size + $BasePx !important; }
+    .ptb#{$size} { padding-top: $size + $BasePx !important; padding-bottom: $size + $BasePx !important; }
+    .plr#{$size} { padding-left: $size + $BasePx !important; padding-right: $size + $BasePx !important; }
+    .m#{$size} { margin: $size + $BasePx !important; }
+    .mt#{$size} { margin-top: $size + $BasePx !important; }
+    .mb#{$size} { margin-bottom: $size + $BasePx !important; }
+    .ml#{$size} { margin-left: $size + $BasePx !important; }
+    .mr#{$size} { margin-right: $size + $BasePx !important; }
+    .mtb#{$size} { margin-top: $size + $BasePx !important; margin-bottom: $size + $BasePx !important; }
+    .mlr#{$size} { margin-left: $size + $BasePx !important; margin-right: $size + $BasePx !important; }
+  }
+}
+
+
+.mauto{ margin: 0 auto }
+.sticky{
+  position: sticky;
+}

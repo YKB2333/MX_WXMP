@@ -1,0 +1,197 @@
+html,
+head,
+body,
+div,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+a,
+span,
+b,
+i,
+table,
+th,
+tr,
+td,
+thead,
+tbody,
+section,
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+header,
+footer,
+hgroup,
+menu,
+nav,
+summary,
+form,
+label,
+input,
+textarea,
+select,
+option,
+button,
+audio,
+canvas,
+progress,
+video,
+img,
+// 小程序
+page,
+view,
+image,
+scroll-view,
+swiper,
+swiper-item,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+checkbox,
+checkbox-group,
+radio,
+slider,
+switch,
+editor,
+navigator,
+picker,
+picker-view,
+live-player,
+live-pusher,
+map,
+web-view {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+page {
+  font-family: PingFang SC, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100%;
+  font-size: 0;
+  line-height: 1.2;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #f7f7f7;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0
+}
+
+[hidden],
+template {
+  display: none
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:active,
+  &:hover {
+    outline: 0
+  }
+}
+
+pre {
+  overflow: auto
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: "Consolas";
+  font-size: 1em
+}
+
+legend {
+  padding: 0;
+  border: 0
+}
+
+textarea {
+  overflow: auto
+}
+
+optgroup {
+  font-weight: 700
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse
+}
+
+
+button::after {
+  border: 0;
+}
+
+input,
+textarea,
+button,
+select {
+  outline: none;
+  min-width: 0;
+  min-height: auto;
+  height: auto;
+  display: inline-block;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:disabled {
+    opacity: 1;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+button::after {
+  border: 0;
+}

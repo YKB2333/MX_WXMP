@@ -1,0 +1,50 @@
+@import './common.scss';
+
+// 删除线
+.delete-line{
+  text-decoration: line-through;
+}
+.shadow{
+  box-shadow: 0 10rpx 10rpx 0 rgba(203,209,227,0.1);
+}
+.min-h-full{
+  min-height: 100vh;
+}
+// 栅格布局
+.layout-row{
+  $gutter: 10, 12, 14, 20;
+  @each $g in $gutter{
+    &.gutter-#{$g}{
+      margin-left: -($g/2) + rpx !important;
+      margin-right: -($g/2) + rpx !important;
+      [class^="layout-col"]{
+        padding-left: ($g/2) + rpx !important;
+        padding-right: ($g/2) + rpx !important;
+      }
+    }
+  }
+  @for $n from 1 through 24{
+    .layout-col-#{$n}{
+      float: left;
+      box-sizing: border-box;
+      width: ($n / 24) * 100%;
+      text-align: center;
+    }
+  }
+  &:after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+.bg-opacity{
+  background-color: transparent;
+}
+
+.filter-gray {
+  pointer-events: none;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
